@@ -1,0 +1,1 @@
+class @Milestone extends Backbone.Model

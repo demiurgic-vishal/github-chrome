@@ -1,0 +1,21 @@
+.message
+
+%form
+  %section.assignee-select
+    %label{for: "assignee"} Assignee:
+    %select.assignee_select{name: 'assignee'}
+      - for repository in @repository.models
+        - full_name = repository.get('login')
+        %option{value: full_name}= repository.get('login')
+
+  %section.milestone-select
+    %label{for: "milstone"} Milestones:
+    %select.milestone_select{name: 'milestone'}
+      - for repository in @milestones.models
+        - full_name = repository.get('title')
+        %option{value: full_name}= repository.get('title')
+
+  
+
+  %section
+    %input.submit{type: "submit", value: "Create Issue"}

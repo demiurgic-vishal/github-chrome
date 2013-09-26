@@ -2,7 +2,7 @@
 
 %form
   %section.repo-select
-    %select{name: 'repository'}
+    %select.repo_select{name: 'repository'}
       - for repository in @repositories.models
         - full_name = repository.get('full_name')
         - if localStorage['new_issue_last_repo'] == repository.get('full_name')
@@ -19,4 +19,4 @@
     %textarea{name: "body", value: ""}
 
   %section
-    %input.submit{type: "submit", value: "Create Issue"}
+    %input.submit{type: "submit", value: "Next"}

@@ -82,7 +82,7 @@ class @GithubChrome extends Backbone.View
           error: @renderErrors
 
       when 'new-issue'
-        @newIssueView = new NewIssueView(repositories: @repositories)
+        @newIssueView = new NewIssueView(repositories: @repositories,ele: @$el)
         @$el.html @newIssueView.el
         @newIssueView.render()
 
